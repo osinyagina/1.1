@@ -22,5 +22,5 @@ from
 	--	event_timestamp between DATE_TRUNC('DAY','{ds}') and DATE_TRUNC('DAY','{ds}') + interval '1 days'
 	) a 
 where 
-	a.timezone not in (select timezone from dds.timezones)
+	a.timezone not in (select timezone from dds.timezones);
 	

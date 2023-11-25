@@ -1,5 +1,3 @@
-
-
 insert into cdm.event_by_ts_bd (
 	ts_timestamp,
 	ts_year,
@@ -35,7 +33,7 @@ from
 		on us.session_id  = se.session_id 
 	inner join dds.browsers b 
 		on us.browser_id = b.browser_id 
-	inner join dds.dds_devices dd   
+	inner join dds.device_types dd   
 		on us.device_type_id  = dd.device_id 
 group by 
 	ts_timestamp,

@@ -1,4 +1,3 @@
--- Координаты пользователя
 insert into dds.geo_locations 
 (
 	geo_latitude,
@@ -15,7 +14,9 @@ from
 		select
 			distinct 
 			e.geo_latitude,
-			e.geo_longitude
+			e.geo_longitude,
+			e.geo_country,
+			e.geo_region_name
 		from 
 			stg.events e  
 			left join dds.geo_locations s	
