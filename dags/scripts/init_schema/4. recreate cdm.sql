@@ -56,4 +56,20 @@ CREATE TABLE if not exists cdm.event_by_ts (
 	CONSTRAINT event_by_ts_un UNIQUE (ts_timestamp)
 );
 
+CREATE TABLE if not exists cdm.event_by_ts_bd (
+	id serial4 NOT NULL,
+	ts_timestamp timestamp NULL,
+	ts_year int2 NULL,
+	ts_month int2 NULL,
+	ts_day int2 NULL,
+	ts_hour int2 NULL,
+	browser_name varchar(32),
+	device_type varchar(16),
+	device_is_mobile boolean,
+	event_num int4 NULL,
+	purchase_num int4 NULL,
+	CONSTRAINT event_by_ts_bd_pkey PRIMARY KEY (id),
+	CONSTRAINT event_by_ts_bd_un UNIQUE (ts_timestamp, browser_name, device_type, device_is_mobile)
+);
+
 
